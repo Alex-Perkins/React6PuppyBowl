@@ -1,34 +1,25 @@
-import { useState } from "react";
+// Import the React library, which allows us to define components
+import React from "react";
+// Import the Players component, which we'll use to show a list of players
+import Players from "./features/players/Players";
+// Define the App component
+function App() {
+  // This component renders the Players component inside a div
+  // This div has a class of 'App', which we could use for styling
 
-import { Provider } from "react-redux";
-import store from "./store/store";
+  <div>
 
-import PuppyDetails from "./features/puppies/PuppyDetails";
-import PuppyList from "./features/puppies/PuppyList";
-import PuppyForm from "./features/puppies/PuppyForm";
+    <Players />
+    <App />
 
-import "./App.scss";
-
-/**
- * @component
- * This app shows a list of puppy bowl players from the API.
- * Users can view players in the roster, add a player to the roster,
- * see more details about a specific player, and remove a player from the roster.
- */
-export default function App() {
-  const [selectedPuppyId, setSelectedPuppyId] = useState();
+  </div>
 
   return (
-    <Provider store={store}>
-      <h1>Puppy Bowl</h1>
-      <PuppyForm />
-      <main>
-        <PuppyList setSelectedPuppyId={setSelectedPuppyId} />
-        <PuppyDetails
-          selectedPuppyId={selectedPuppyId}
-          setSelectedPuppyId={setSelectedPuppyId}
-        />
-      </main>
-    </Provider>
+    <section>
+      <h1>Puppy Players</h1>
+    </section>
   );
 }
+
+// Export the App component as the default export
+export default App;
