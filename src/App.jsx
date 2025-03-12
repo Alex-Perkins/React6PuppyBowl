@@ -7,16 +7,10 @@ function App() {
   // This component renders the Players component inside a div
   // This div has a class of 'App', which we could use for styling
 
-  <div>
-
-    <Players />
-    <App />
-
-  </div>
-
   return (
     <section>
       <h1>Puppy Players</h1>
+      <Players/>
     </section>
   );
 }

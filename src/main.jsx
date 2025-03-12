@@ -1,6 +1,7 @@
 // Import the React and ReactDOM libraries
 import React from "react";
 // React is for defining components and ReactDOM is for rendering them in the DOM
+import ReactDOM from "react-dom/client";
 
 // Import the main App component
 import App from "./App";
@@ -16,13 +17,11 @@ import { Provider } from "react-redux";
 // Call ReactDOM.render to render our App component in the DOM
 // Wrap the App in a Provider to give it access to the Redux store
 // Also, wrap it in React.StrictMode, which is a wrapper component that checks for potential problems in the app during development
-ReactDOM.render(
-  <React.StrictMode>
-<Provider store={store}>
-<App />
-</Provider>
-</React.StrictMode>
-)
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode></React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 );

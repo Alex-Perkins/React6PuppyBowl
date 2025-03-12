@@ -8,7 +8,7 @@ import { useAllPuppiesQuery } from "../../api/puppyBowlApi";
 // Define a new React component
 const Players = () => {
   // Use the generated hook to fetch data from the API
-  
+
   // When the component is first rendered, it will start the API fetch
   // It will re-render each time the fetch status changes (e.g., "loading", "data arrived", "error")
   const { data = {}, error, isLoading } = useAllPuppiesQuery();
@@ -30,7 +30,7 @@ const Players = () => {
       {data.data.players.map((player) => (
         // Use the player's ID as the key for this div
         <div key={player.id} className="player-card">
-          {player.imageUrl}
+          <img className="player-image" src={player.imageUrl} />
 
           <div className="player-details">
             <h2> {player.name} </h2>
